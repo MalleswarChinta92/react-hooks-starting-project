@@ -21,9 +21,13 @@ const Ingredients = () => {
     })
   }
   const removeIngredientHandler = ingredientId => {
-    setUserIngredients(previousState=> (
-      previousState.filter(ingredient => ingredient.id !== ingredientId)
-    ))
+    fetch(`https://react-hooks-ingredients-7320e.firebaseio.com/ingredients/${ingredientId}.json`, {
+      method: 'DELETE'
+    }).then(() => {
+      setUserIngredients(previousState=> (
+        previousState.filter(ingredient => ingredient.id !== ingredientId)
+      ))
+    })
   }
 
   const filteredIngredientsHandler = useCallback(ingredients => {
