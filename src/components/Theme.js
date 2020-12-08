@@ -9,7 +9,7 @@ const Theme = () => {
         backgroundColor: darkTheme ? '#333': '#ccc',
         color: darkTheme ? '#ccc' : '#333',
         padding: '2rem',
-        margib: '2rem'
+        margin: '2rem'
     }
 
     return (
